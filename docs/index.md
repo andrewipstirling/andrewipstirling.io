@@ -9,5 +9,8 @@ Hi, my name is Andrew Stirling I'm an undergraduate student in Mechanical Engine
 
 - [About](about.html)
 - [Unitree Go1 Controller](go1.md)
-- [Soft Actor-Critic for Inverted Pendulum Control] (sac.md)
+- [Soft Actor-Critic for Inverted Pendulum Control](sac.md)
+- [Multi-Camera, Image-Guided Neurosurgery](capstone.md)
+- [Applied Robotics](ar.md)
+- [Collection of Class Projects](class.md)
 - [CV](cv.html)
