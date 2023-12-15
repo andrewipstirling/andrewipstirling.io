@@ -23,6 +23,6 @@ Finally, with both the PD-ILC we were able to obtain good performance with veloc
 ![Performance of PD-ILC](assets/fig_go1.JPG)
 
 And a video of the initial performance!
-<video width="640" height="360" controls>
-  <source src="assets/go1_walk.mov" type="video/quicktime">
-</video>
+
+https://github.com/andrewipstirling/andrewipstirling.io/assets/77990898/af907ed2-b911-4b1d-a0aa-902a54661f88
+
