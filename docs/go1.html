@@ -7,33 +7,26 @@ title: Low-Level Control for the Unitree Go1
 
 <section>
   <p>
-      In this project with the CoRoLab at the Berlin University of Applied Science and Technology, I helped investigate 
-      a control strategy that combined Proportional-Derivative (PD) control with Iterative Learning Control (ILC) to 
-      enhance legged robot velocity control. The first step was deriving a first principles, kinematic model of the Unitree Go1. 
-      Using the inverse kinematics equations derived from this allowed us to control individual foot positions in reference to the 
-      shoulder (hip) joints, forming the basis of the control strategy.
+    In this project with the CoRoLab at the Berlin University of Applied Science and Technology, I helped investigate 
+    a control strategy that combined Proportional-Derivative (PD) control with Iterative Learning Control (ILC) to 
+    enhance legged robot velocity control. The first step was deriving a first principles, kinematic model of the Unitree Go1. 
+    Using the inverse kinematics equations derived from this allowed us to control individual foot positions in reference to the 
+    shoulder (hip) joints, forming the basis of the control strategy.
   </p>
 
   <img src="assets/unitree_go1.JPG" alt="Kinematic Model of Go1">
 
   <p>Reference foot trajectories were obtained using Bezier Curves.</p>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}})
-  </script>
-  <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
-
   <p>$$
-      B(t) = \sum_{i=0}^{n} \binom{n}{i} (1-t)^{n-i} t^i P_i
+    B(t) = \sum_{i=0}^{n} \binom{n}{i} (1-t)^{n-i} t^i P_i
   $$</p>
 
   <p>
-      Using PD Control, each foot is able to follow these step trajectories, resulting in a trotting gait. However, PD turned out 
-      to not be satisfactory for performance, with the Go1 being unable to accurately follow desired trotting speeds. 
-      To improve upon this, we integrated ILC, which traditionally was only used for fixed robots such as robotic arms. 
-      The architecture for the PD-ILC method can be found below
+    Using PD Control, each foot is able to follow these step trajectories, resulting in a trotting gait. However, PD turned out 
+    to not be satisfactory for performance, with the Go1 being unable to accurately follow desired trotting speeds. 
+    To improve upon this, we integrated ILC, which traditionally was only used for fixed robots such as robotic arms. 
+    The architecture for the PD-ILC method can be found below
   </p>
 
   <img src="assets/pdilc.JPG" alt="PD-ILC Framework">
@@ -45,10 +38,14 @@ title: Low-Level Control for the Unitree Go1
   <p>And a video of the initial performance!</p>
 
   <video 
-      width="560" height="315" controls>
-      <source src="assets/go1_walk.mov" type="video/mov">
+    width="560" height="315" controls>
+    <source src="assets/go1_walk.mov" type="video/mov">
   </video>
-
 </section>
 
-</html>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}})
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
