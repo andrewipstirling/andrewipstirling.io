@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Applied Robotics
 ---
 <head>
   <meta charset="UTF-8">
@@ -9,49 +10,25 @@ layout: default
 
 <body>
 
-  <header>
-    <h1>Low-Level Control for the Unitree Go1</h1>
-  </header>
-
   <section>
     <p>
-        In these projects, I was able to work with the Kinova Kortex arm, where I was able to implement
-        kinematic and dynamic controllers. 
+        In these projects, I was able to work with a multitude of robots in my Applied Robotics Graduate Course.
+        The main highlights consisted of implementing kinematic and dynamic controllers
+        for the Kinova Kortex arm, that were able to achieve commanded positions in a set amount of time.
     </p>
-
-    <img src="assets/unitree_go1.JPG" alt="Kinematic Model of Go1">
-
-    <p>Reference foot trajectories were obtained using Bezier Curves.</p>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}})
-    </script>
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-
-    <p>$$
-        B(t) = \sum_{i=0}^{n} \binom{n}{i} (1-t)^{n-i} t^i P_i
-    $$</p>
-
+    <video 
+      width="560" height="315" controls>
+      <source src="assets/dynamics_kortex.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <p>
-        Using PD Control, each foot is able to follow these step trajectories, resulting in a trotting gait. However, PD turned out 
-        to not be satisfactory for performance, with the Go1 being unable to accurately follow desired trotting speeds. 
-        To improve upon this, we integrated ILC, which traditionally was only used for fixed robots such as robotic arms. 
-        The architecture for the PD-ILC method can be found below
+        Building off the controllers, I used ROS action servers to perform various tasks such as cleaning
+        a table of boxes, or pick-and-place. 
     </p>
-
-    <img src="assets/pdilc.JPG" alt="PD-ILC Framework">
-
-    <p>Finally, with both the PD-ILC, we were able to obtain good performance with velocity errors diminishing to under 5% after the ILC has kicked in.</p>
-
-    <img src="assets/fig_go1.JPG" alt="Performance of PD-ILC">
-
-    <p>And a video of the initial performance!</p>
 
     <video 
         width="560" height="315" controls>
-        <source src="assets/go1_walk.mp4" type="video/mp4">
+        <source src="assets/cleaning_kortex.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 

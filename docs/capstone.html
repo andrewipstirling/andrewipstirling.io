@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Multi-Camera Setup for Image Guided Neurosurgery
 ---
 <head>
   <meta charset="UTF-8">
@@ -10,53 +11,29 @@ layout: default
 <body>
 
   <header>
-    <h1>Image Guided Neurosurgery</h1>
+    <h2>Image Guided Neurosurgery</h2>
   </header>
 
   <section>
     <p>
-        In this project with the CoRoLab at the Berlin University of Applied Science and Technology, I helped investigate 
-        a control strategy that combined Proportional-Derivative (PD) control with Iterative Learning Control (ILC) to 
-        enhance legged robot velocity control. The first step was deriving a first principles, kinematic model of the Unitree Go1. 
-        Using the inverse kinematics equations derived from this allowed us to control individual foot positions in reference to the 
-        shoulder (hip) joints, forming the basis of the control strategy.
+        In my final year Capstone project, my team partnered with the Neuro-Imaging and Surgical Technologies 
+        Lab (NIST) at McGill, to develop a multi-camera object tracking system to overcome problems that traditional
+        single infrared (IR) camera approaches suffer from, such as occlusion.
     </p>
-
-    <img src="assets/unitree_go1.JPG" alt="Kinematic Model of Go1">
-
-    <p>Reference foot trajectories were obtained using Bezier Curves.</p>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}})
-    </script>
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-
-    <p>$$
-        B(t) = \sum_{i=0}^{n} \binom{n}{i} (1-t)^{n-i} t^i P_i
-    $$</p>
 
     <p>
-        Using PD Control, each foot is able to follow these step trajectories, resulting in a trotting gait. However, PD turned out 
-        to not be satisfactory for performance, with the Go1 being unable to accurately follow desired trotting speeds. 
-        To improve upon this, we integrated ILC, which traditionally was only used for fixed robots such as robotic arms. 
-        The architecture for the PD-ILC method can be found below
+        The project is still in the developmental stage however all design stages have been completed,
+        and we are rapidly converging on a physical protoype.
     </p>
 
-    <img src="assets/pdilc.JPG" alt="PD-ILC Framework">
+    <div class="image-container">
+      <img src="assets/capstone/los.png" alt="Image 1">
+      <img src="assets/capstone/ring_fixture_bottom.png" alt="Image 2">
+    </div>
 
-    <p>Finally, with both the PD-ILC, we were able to obtain good performance with velocity errors diminishing to under 5% after the ILC has kicked in.</p>
-
-    <img src="assets/fig_go1.JPG" alt="Performance of PD-ILC">
-
-    <p>And a video of the initial performance!</p>
-
-    <video 
-        width="560" height="315" controls>
-        <source src="assets/go1_walk.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <p>More information can be found in the design report here:</p>
+    <p><a href="{{ "/assets/CV-AStirling24.pdf"| relative_url }}" target="_blank">
+      Embodiment Design Report(PDF)</a></p>
 
   </section>
 
