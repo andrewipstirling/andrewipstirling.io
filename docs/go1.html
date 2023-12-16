@@ -1,51 +1,63 @@
 ---
 layout: default
-title: Low-Level Control for the Unitree Go1
 ---
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Low-Level Control for the Unitree Go1</title>
+</head>
+<body>
 
-<h2>Low-Level Control for the Unitree Go1</h2>
+  <header>
+    <h1>Low-Level Control for the Unitree Go1</h1>
+  </header>
 
-<section>
-  <p>
-    In this project with the CoRoLab at the Berlin University of Applied Science and Technology, I helped investigate 
-    a control strategy that combined Proportional-Derivative (PD) control with Iterative Learning Control (ILC) to 
-    enhance legged robot velocity control. The first step was deriving a first principles, kinematic model of the Unitree Go1. 
-    Using the inverse kinematics equations derived from this allowed us to control individual foot positions in reference to the 
-    shoulder (hip) joints, forming the basis of the control strategy.
-  </p>
+  <section>
+    <p>
+        In this project with the CoRoLab at the Berlin University of Applied Science and Technology, I helped investigate 
+        a control strategy that combined Proportional-Derivative (PD) control with Iterative Learning Control (ILC) to 
+        enhance legged robot velocity control. The first step was deriving a first principles, kinematic model of the Unitree Go1. 
+        Using the inverse kinematics equations derived from this allowed us to control individual foot positions in reference to the 
+        shoulder (hip) joints, forming the basis of the control strategy.
+    </p>
 
-  <img src="assets/unitree_go1.JPG" alt="Kinematic Model of Go1">
+    <img src="assets/unitree_go1.JPG" alt="Kinematic Model of Go1">
 
-  <p>Reference foot trajectories were obtained using Bezier Curves.</p>
+    <p>Reference foot trajectories were obtained using Bezier Curves.</p>
 
-  <p>$$
-    B(t) = \sum_{i=0}^{n} \binom{n}{i} (1-t)^{n-i} t^i P_i
-  $$</p>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}})
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 
-  <p>
-    Using PD Control, each foot is able to follow these step trajectories, resulting in a trotting gait. However, PD turned out 
-    to not be satisfactory for performance, with the Go1 being unable to accurately follow desired trotting speeds. 
-    To improve upon this, we integrated ILC, which traditionally was only used for fixed robots such as robotic arms. 
-    The architecture for the PD-ILC method can be found below
-  </p>
+    <p>$$
+        B(t) = \sum_{i=0}^{n} \binom{n}{i} (1-t)^{n-i} t^i P_i
+    $$</p>
 
-  <img src="assets/pdilc.JPG" alt="PD-ILC Framework">
+    <p>
+        Using PD Control, each foot is able to follow these step trajectories, resulting in a trotting gait. However, PD turned out 
+        to not be satisfactory for performance, with the Go1 being unable to accurately follow desired trotting speeds. 
+        To improve upon this, we integrated ILC, which traditionally was only used for fixed robots such as robotic arms. 
+        The architecture for the PD-ILC method can be found below
+    </p>
 
-  <p>Finally, with both the PD-ILC, we were able to obtain good performance with velocity errors diminishing to under 5% after the ILC has kicked in.</p>
+    <img src="assets/pdilc.JPG" alt="PD-ILC Framework">
 
-  <img src="assets/fig_go1.JPG" alt="Performance of PD-ILC">
+    <p>Finally, with both the PD-ILC, we were able to obtain good performance with velocity errors diminishing to under 5% after the ILC has kicked in.</p>
 
-  <p>And a video of the initial performance!</p>
+    <img src="assets/fig_go1.JPG" alt="Performance of PD-ILC">
 
-  <video 
-    width="560" height="315" controls>
-    <source src="assets/go1_walk.mov" type="video/mov">
-  </video>
-</section>
+    <p>And a video of the initial performance!</p>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}})
-</script>
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+    <video 
+        width="560" height="315" controls>
+        <source src="assets/go1_walk.mov" type="video/mov">
+        Your browser does not support the video tag.
+    </video>
+
+  </section>
+
+</body>
+</html>
