@@ -14,31 +14,45 @@ title: Multi-Camera Setup for Image Guided Neurosurgery
 
   <section>
     <p>
-        In my final year Capstone project, my team partnered with the Neuro-Imaging and Surgical Technologies 
-        Lab (NIST) at McGill, to develop a multi-camera object tracking system to overcome problems that traditional
-        single infrared (IR) camera approaches suffer from, such as occlusion.
+        During my Bachelor's capstone project, my team partnered with the Neuro-Imaging and Surgical Technologies 
+        Lab (NIST) at McGill, to develop a multi-camera object tracking system. State of the art neuronavigated surgeries require 
+        expensive infrared stereo cameras, which are prone to occlusion in the operating room (OR). To solve this, my capstone group designed a mutli-camera 
+        ring fixture that can be overlayed on top of surgical lamps in the OR. Moreover, we built a custom optical algorithm to fuse the information 
+        from each camera, allowing for numerous cameras to be occluded while still allowing tracking. Currently, neuronavigated surgeries are prohibitively
+        expensive, meaning that very few Canadian hospitals are able to offer this type of lifesaving operation. Our capstone project placed 2nd among
+        competing teams, providing us funding to transition into the startup OPSIS.
     </p>
+  </section>
 
+  <h3>Mechanical/Electrical Design</h3>
+   
+
+  <section>
     <p>
-        While still in development, we look to design and construct a module holding multiple cameras, which
-        can be placed on top of operating room surgical lights. Using fiducial markers attached to the patient 
-        and surgical tool, we hope to obtain precise tracking information on the tool itself, through fusion of the 
-        different cameras. Tracking data will be able to overlayed on CT scans performed by the hospital in order 
-        to provide exact, and real-time feedback to the surgeon.
+      Fixture was a 3D printed circle, with 5 camera fixtures. The surgical pointer, and reference were 3D printed dodecahedrones, maximizing the amount
+  of planar space to fit ArUco markers used in the optical tracking software. On top of the camera ring were 5 Raspberry Pi's with a power source, and network
+  switch to carry all 5 Raspberry Pi RGB camera feeds to the local computer.
+    </p>
+    <img src="assets/capstone/embodimient.png" alt="Mechanical Drawings of Components">
+    <img src="assets/capstone/exploded.png" alt="Exploded View of Camera Ring">
+  </section>
+
+  <h3>Optical Fusion Algorithm</h3>
+  <section>
+    <p>
+      To fuse the camera measurements, we extracted detected ArUco markers from the image and 
+      computed the pose of the pointer and reference by solving a Perspective-n-Point (PnP) problem. Then we came up with a 
+      constant velocity motion model on the SO(3) Lie group. From here we designed an adaptive extended Kalman filter, that fused each camera's pose
+      measurement as it became available. Current estimate error is on the order of 1mm which is similar to the performance reached of traditional IR cameras.
     </p>
 
-    <p> 
-      Currently we are in the prototyping phase but preliminary models can be seen below. 
+  </section>
+
+  <h3>Results</h3>
+  <section>
+    <p>
+      
     </p>
-
-    <div class="image-container">
-      <img src="assets/capstone/los.png" alt="Image 1">
-      <img src="assets/capstone/ring_fixture_bottom.png" alt="Image 2">
-    </div>
-
-    <p>More information can be found in the design report here:</p>
-    <p><a href="{{ "/assets/CV-AStirling24.pdf"| relative_url }}" target="_blank">
-      Embodiment Design Report(PDF)</a></p>
 
   </section>
 
