@@ -1,39 +1,31 @@
-/* Custom styles for footer */
-html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-  .wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  header, section {
-    flex: 1;
-  }
-  
-  footer {
-    background-color: #f1f1f1;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  footer p {
-    margin: 0;
-  }
-  
-  .social-links {
-    margin-top: 10px;
-  }
-  
-  .social-links a {
-    margin: 0 10px;
-    display: inline-block;
-  }
-  
-  .social-links img {
-    width: 24px; /* Adjust size as needed */
-    height: auto;
-  }
+* Footer-specific styles */
+footer {
+  background-color: #f1f1f1;  /* Optional background color for the footer */
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-links img {
+  width: 24px;
+  height: auto;
+}
+
+/* Ensure footer sticks to the bottom without altering global styles */
+.site-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

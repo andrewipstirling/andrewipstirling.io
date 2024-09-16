@@ -45,20 +45,7 @@
 
       </section>
     </div>
-    <footer>
-      <p>&copy; {{ site.time | date: "%Y" }} Andrew Stirling. All rights reserved.</p>
-      <div class="social-links">
-        <a href="https://github.com/andrewipstirling" target="_blank" title="GitHub">
-          <img src="{{ '/assets/icons/github.png' | relative_url }}" alt="GitHub">
-        </a>
-        <a href="https://scholar.google.com/citations?user=your-google-scholar-id" target="_blank" title="Google Scholar">
-          <img src="{{ '/assets/icons/google-scholar.png' | relative_url }}" alt="Google Scholar">
-        </a>
-        <a href="https://www.linkedin.com/in/andrew-stirling-9974161b4/" target="_blank" title="LinkedIn">
-          <img src="{{ '/assets/icons/linkedin.png' | relative_url }}" alt="LinkedIn">
-        </a>
-      </div>
-    </footer>
+    {% include footer.html %}
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
 </html>
