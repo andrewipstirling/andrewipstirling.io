@@ -64,19 +64,24 @@ a:hover small {
   min-height: 100vh; /* Ensure the wrapper takes full height of viewport */
   margin: 0 auto;
   width: 860px;
+  padding-top: 60px; /* Adjust padding for fixed header */
 }
 
 header {
   width: 270px;
-  float: left;
   position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff; /* Ensure background color matches body */
+  padding-top: 20px; /* Add padding to ensure header content is not stuck to the top */
   -webkit-font-smoothing: subpixel-antialiased;
+  z-index: 10; /* Ensure header stays on top of other content */
 }
 
 section {
   flex: 1; /* Allow section to expand and push footer down */
-  width: 500px;
-  float: right;
+  margin-left: 270px; /* Space for fixed header */
   padding-bottom: 50px; /* Space for footer */
 }
 
@@ -114,16 +119,13 @@ footer p {
   .wrapper {
     width: auto;
     margin: 0;
+    padding-top: 0; /* Remove padding for smaller screens */
   }
 
   header, section, footer {
-    float: none;
     position: static;
     width: auto;
-  }
-
-  header {
-    padding-right: 320px;
+    float: none;
   }
 
   section {
@@ -183,3 +185,4 @@ footer p {
     color: #444;
   }
 }
+
