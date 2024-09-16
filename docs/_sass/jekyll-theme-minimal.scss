@@ -285,20 +285,3 @@ footer {
   }
 }
 
-.social-links {
-  display: flex;
-  justify-content: center; /* Center the icons horizontally */
-  align-items: center; /* Center the icons vertically */
-  gap: 15px; /* Space between icons */
-}
-
-.social-links a {
-  display: block;
-}
-
-.social-links img {
-  width: 24px; /* Adjust size as needed */
-  height: 24px; /* Ensure height matches width */
-  object-fit: contain; /* Ensure the image maintains aspect ratio */
-}
-
