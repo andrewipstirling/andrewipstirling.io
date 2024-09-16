@@ -5,7 +5,13 @@ layout: default
 # About Me
 
 
-Hi, my name is Andrew Stirling! I'm an undergraduate student in Mechanical Engineering minoring in Computer Science, at McGill University. Given my background, I love integrating traditional engineering topics such as control, design, and optimization, with my CS knowledge to produce interesting projects within the field of Robotics ranging from new control methods, computer vision for pose estimation and machine learning.  
+Hi! My name is Andrew Stirling. I am a Master's (Thesis) student at McGill University studying Robotics, 
+with the <a href="https://www.decar.ca/">DECAR</a> Lab.
+    
+I am currently researching problems in navigation/estimation for multi-agent robotic systems in 
+GNSS (GPS) denied environments through the use of UWB. 
+
+Please see below for a list of recent projects in chronological order. 
 
 - [Unitree Go1 Controller](go1.html)
 - [Soft Actor-Critic for Inverted Pendulum Control](sac.html)
