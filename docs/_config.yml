@@ -1,1 +1,6 @@
 theme: jekyll-theme-minimal
+
+source: docs
+
+exclude: 
+  - README.md
